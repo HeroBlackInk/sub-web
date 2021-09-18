@@ -15,10 +15,10 @@ jobs:
         node-version: [10.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.3.4
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2.4.0
       with:
         node-version: ${{ matrix.node-version }}
 
@@ -27,7 +27,7 @@ jobs:
         yarn install
         yarn build
     - name: Upload
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2.2.4
       with:
         name: dist
         path: dist/
@@ -36,5 +36,5 @@ jobs:
       uses: zzzze/webhook-trigger@master
       with:
         data: '{"ref":"master"}'
-        webhook_url: 'https://api.github.com/repos/zhongfly/now-subconverter/actions/workflows/sub-web.yml/dispatches'
+        webhook_url: 'https://api.github.com/repos/LM-Firefly/now-subconverter/actions/workflows/sub-web.yml/dispatches'
         options: '-H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${{ secrets.REPO_TOKEN }}"'
