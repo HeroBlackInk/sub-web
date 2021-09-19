@@ -336,9 +336,9 @@ export default {
                   "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Subconverter-base/AIO-NoReject.ini",
               },
               {
-                label: "AIO-NoReject-MultiSub",
+                label: "MultiSub-NoReject",
                 value:
-                  "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Subconverter-base/AIO-NoReject-MultiSub.ini",
+                  "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Subconverter-base/MultiSub-NoReject.ini",
               },
               {
                 label: "CordCloud",
