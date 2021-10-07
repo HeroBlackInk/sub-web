@@ -1,0 +1,8 @@
+{
+  "name": "Sub-Web",
+  "description": "Run SubWeb on Heroku.",
+  "keywords": ["wub-web"],
+  "website": "https://github.com/LM-Firefly/sub-web/",
+  "repository": "https://github.com/LM-Firefly/sub-web/",
+  "stack": "container"
+}
