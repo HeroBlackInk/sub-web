@@ -290,27 +290,15 @@ export default {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
           "firefly-sub.herokuapp.com": "https://firefly-sub.herokuapp.com/sub?",
           "firefly-sub.vercel.app": "https://firefly-sub.vercel.app/sub?",
-          "firefly-sub.up.railway.app":
-            "https://firefly-sub.up.railway.app/sub?",
-          "sub-beta.vercel.app": "https://sub-beta.vercel.app/sub?",
+          "firefly-sub.up.railway.app": "https://firefly-sub.up.railway.app/sub?",
           "sub.ccsub.site(CordCloud机场提供)": "https://subweb.ccsub.site/sub?",
-          "api.dler.io(sub作者&lhie1提供-稳定)": "https://api.dler.io/sub?",
-          "api.wcc.best(sub-web作者提供-稳定)": "https://api.wcc.best/sub?",
-          "subcon.dlj.tf(subconverter作者提供1)": "https://subcon.dlj.tf/sub?",
-          "subconverter.herokuapp.com":
-            "https://subconverter.herokuapp.com/sub?",
         },
         backendOptions: [
           { value: "http://localhost:25500/sub?" },
           { value: "https://firefly-sub.herokuapp.com/sub?" },
           { value: "https://firefly-sub.vercel.app/sub?" },
           { value: "https://firefly-sub.up.railway.app/sub?" },
-          { value: "https://sub-beta.vercel.app/sub?" },
           { value: "https://subweb.ccsub.site/sub?" },
-          { value: "https://api.dler.io/sub?" },
-          { value: "https://api.wcc.best/sub?" },
-          { value: "https://subcon.dlj.tf/sub?" },
-          { value: "https://subconverter.herokuapp.com/sub?" },
         ],
         remoteConfig: [
           {
