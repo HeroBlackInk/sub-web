@@ -650,7 +650,7 @@ export default {
     this.form.clientType = "clash";
     this.form.customBackend = defaultBackend;
     this.form.remoteConfig =
-      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Subconverter-base/CordCloud.ini";
+      "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Subconverter-base/MultiSub-NoReject.ini";
     this.getBackendVersion();
   },
   methods: {
