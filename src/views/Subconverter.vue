@@ -721,7 +721,6 @@ export default {
         sourceSub.indexOf("losadhwse") !== -1 &&
         (backend.indexOf("py6.pw") !== -1 ||
           backend.indexOf("subconverter-web.now.sh") !== -1 ||
-          backend.indexOf("subconverter.herokuapp.com") !== -1 ||
           backend.indexOf("api.wcc.best") !== -1)
       ) {
         this.$alert(
