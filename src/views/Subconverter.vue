@@ -329,6 +329,11 @@ export default {
                   "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Subconverter-base/MultiSub-NoReject.ini",
               },
               {
+                label: "AllSub-NoReject",
+                value:
+                  "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Subconverter-base/AllSub-NoReject.ini",
+              },
+              {
                 label: "CordCloud",
                 value:
                   "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Subconverter-base/CordCloud.ini",
