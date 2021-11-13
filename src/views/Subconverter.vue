@@ -113,7 +113,7 @@
                 <el-form-item label="TUN & DNS:">
                   <el-input
                     v-model="form.clashdns"
-                    placeholder="tap | tun | cfa"
+                    placeholder="tap | tun"
                   />
                 </el-form-item>
                 <el-form-item label-width="0px">
