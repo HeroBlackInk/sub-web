@@ -58,3 +58,5 @@ jobs:
               owner: context.repo.owner,
               repo: 'railway-sub',
               workflow_id: 'sub-web.yml',
+              ref: 'master',
+            });
