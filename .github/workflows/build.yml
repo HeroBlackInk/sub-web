@@ -10,29 +10,51 @@ jobs:
       matrix:
         node-version: [16]
     steps:
-    - uses: actions/checkout@v2.3.4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2.4.0
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Get dependencies and build
-      run: |
-        yarn install
-        yarn build
-    - name: Upload
-      uses: actions/upload-artifact@v2.2.4
-      with:
-        name: dist
-        path: dist/
-    - name: Push update to now-subconverter
-      if: ${{ github.ref == 'refs/heads/master' }}
-      uses: actions/github-script@v5
-      with:
-        github-token: ${{ secrets.REPO_TOKEN }}
-        script: |
-          github.rest.actions.createWorkflowDispatch({
-            owner: context.repo.owner,
-            repo: 'now-subconverter',
-            workflow_id: 'sub-web.yml',
-            ref: 'master',
-          });
+      - uses: actions/checkout@v2.3.4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2.4.0
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Get dependencies and build
+        run: |
+          yarn install
+          yarn build
+      - name: Upload
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: dist
+          path: dist/
+      - name: Push update to now-subconverter
+        if: ${{ github.ref == 'refs/heads/master' }}
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.REPO_TOKEN }}
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: 'now-subconverter',
+              workflow_id: 'sub-web.yml',
+              ref: 'master',
+            });
+      - name: Push update to Firefly-Sub
+        if: ${{ github.ref == 'refs/heads/master' }}
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.REPO_TOKEN }}
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: 'Firefly-sub',
+              workflow_id: 'sub-web.yml',
+              ref: 'master',
+            });
+      - name: Push update to railway-sub
+        if: ${{ github.ref == 'refs/heads/master' }}
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.REPO_TOKEN }}
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: 'railway-sub',
+              workflow_id: 'sub-web.yml',
