@@ -15,8 +15,16 @@
               style="margin-left: 20px"
               @click="gotoTgChannel"
             />
-
-            <div style="font-style: normal; font-size: 80%; text-align: right; margin-top: 5px;">{{ backendVersion }}</div>
+            <div
+              style="
+                font-style: normal;
+                font-size: 80%;
+                text-align: right;
+                margin-top: 5px;
+              "
+            >
+              {{ backendVersion }}
+            </div>
           </div>
           <el-container>
             <el-form
@@ -33,7 +41,7 @@
                 <el-input
                   v-model="form.sourceSubUrl"
                   type="textarea"
-                  rows="3"
+                  rows="4"
                   placeholder="支持各种订阅链接或单节点链接，多个链接每行一个或用 | 分隔"
                   @blur="saveSubUrl"
                 />
