@@ -16,7 +16,19 @@
               @click="gotoTgChannel"
             />
 
-            <div slot="header">Subscription Converter<div style="font-style: normal; font-size: 80%; text-align: right; margin-top: 5px">{{backendVersion}}</div></div>
+            <div slot="header">
+              Subscription Converter
+              <div
+                style="
+                  font-style: normal;
+                  font-size: 80%;
+                  text-align: right;
+                  margin-top: 5px;
+                "
+              >
+                {{ backendVersion }}
+              </div>
+            </div>
           </div>
           <el-container>
             <el-form
@@ -106,12 +118,6 @@
                   <el-input
                     v-model="form.filename"
                     placeholder="返回的订阅文件名"
-                  />
-                </el-form-item>
-                <el-form-item label="自定义组名:">
-                  <el-input
-                    v-model="form.customGroup"
-                    placeholder="仅适用于 SSR/SSD/SIP002"
                   />
                 </el-form-item>
                 <el-form-item label="TUN & DNS:">
@@ -578,28 +584,28 @@ export default {
         ],
       },
       form: {
-        sourceSubUrl: "",
+        appendType: false,
+        clashdns: "",
+        classic: false, // 是否展开规则
         clientType: "",
         customBackend: "",
-        remoteConfig: "",
-        excludeRemarks: "",
-        includeRemarks: "",
-        filename: "",
-        clashdns: "",
         emoji: true,
-        nodeList: false,
-        rule: false,
-        extraset: false,
-        sort: false,
-        udp: false,
-        tfo: false,
-        scv: false,
-        fdn: false,
-        appendType: false,
-        insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
+        excludeRemarks: "",
         expand: false, // 是否展开规则
-        classic: false, // 是否展开规则
+        extraset: false,
+        fdn: false,
+        filename: "",
+        includeRemarks: "",
+        insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
         new_name: true, // 是否使用 Clash 新字段
+        nodeList: false,
+        remoteConfig: "",
+        rule: false,
+        scv: false,
+        sort: false,
+        sourceSubUrl: "",
+        tfo: false,
+        udp: false,
       },
 
       loading: false,
