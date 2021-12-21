@@ -16,19 +16,7 @@
               @click="gotoTgChannel"
             />
 
-            <div slot="header">
-              Subscription Converter
-              <div
-                style="
-                  font-style: normal;
-                  font-size: 80%;
-                  text-align: right;
-                  margin-top: 5px;
-                "
-              >
-                {{ backendVersion }}
-              </div>
-            </div>
+            <div style="font-style: normal; font-size: 80%; text-align: right; margin-top: 5px;">{{ backendVersion }}</div>
           </div>
           <el-container>
             <el-form
