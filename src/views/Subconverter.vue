@@ -16,9 +16,7 @@
               @click="gotoTgChannel"
             />
 
-            <div style="display: inline-block; position: absolute; right: 20px">
-              {{ backendVersion }}
-            </div>
+            <div slot="header">Subscription Converter<div style="font-style: normal; font-size: 80%; text-align: right; margin-top: 5px">{{backendVersion}}</div></div>
           </div>
           <el-container>
             <el-form
@@ -108,6 +106,12 @@
                   <el-input
                     v-model="form.filename"
                     placeholder="返回的订阅文件名"
+                  />
+                </el-form-item>
+                <el-form-item label="自定义组名:">
+                  <el-input
+                    v-model="form.customGroup"
+                    placeholder="仅适用于 SSR/SSD/SIP002"
                   />
                 </el-form-item>
                 <el-form-item label="TUN & DNS:">
@@ -287,7 +291,8 @@ export default {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
           "firefly-sub.herokuapp.com": "https://firefly-sub.herokuapp.com/sub?",
           "firefly-sub.vercel.app": "https://firefly-sub.vercel.app/sub?",
-          "firefly-sub.up.railway.app": "https://firefly-sub.up.railway.app/sub?",
+          "firefly-sub.up.railway.app":
+            "https://firefly-sub.up.railway.app/sub?",
           "sub.ccsub.site(CordCloud机场提供)": "https://subweb.ccsub.site/sub?",
         },
         backendOptions: [
