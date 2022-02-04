@@ -24,7 +24,7 @@ jobs:
         with:
           name: dist
           path: dist/
-      - name: Push update to now-subconverter
+      - name: Push update to subconverter
         if: ${{ github.ref == 'refs/heads/master' }}
         uses: actions/github-script@v5
         with:
@@ -32,31 +32,7 @@ jobs:
           script: |
             github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
-              repo: 'now-subconverter',
+              repo: 'subconverter',
               workflow_id: 'sub-web.yml',
               ref: 'master',
-            });
-      - name: Push update to Firefly-Sub
-        if: ${{ github.ref == 'refs/heads/master' }}
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.REPO_TOKEN }}
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: 'Firefly-sub',
-              workflow_id: 'sub-web.yml',
-              ref: 'master',
-            });
-      - name: Push update to railway-sub
-        if: ${{ github.ref == 'refs/heads/master' }}
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.REPO_TOKEN }}
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: 'railway-sub',
-              workflow_id: 'sub-web.yml',
-              ref: 'main',
             });
