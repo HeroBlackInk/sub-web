@@ -293,18 +293,18 @@ export default {
           自动判断客户端: "auto",
         },
         customBackend: {
+          "localhost:25500 本地版": "http://localhost:25500/sub?",
           "firefly-sub.herokuapp.com": "https://firefly-sub.herokuapp.com/sub?",
           "firefly-sub.vercel.app": "https://firefly-sub.vercel.app/sub?",
           "firefly-sub.up.railway.app":
             "https://firefly-sub.up.railway.app/sub?",
-          "localhost:25500 本地版": "http://localhost:25500/sub?",
           "sub.ccsub.site(CordCloud机场提供)": "https://subweb.ccsub.site/sub?",
         },
         backendOptions: [
+          { value: "http://localhost:25500/sub?" },
           { value: "https://firefly-sub.herokuapp.com/sub?" },
           { value: "https://firefly-sub.vercel.app/sub?" },
           { value: "https://firefly-sub.up.railway.app/sub?" },
-          { value: "http://localhost:25500/sub?" },
           { value: "https://subweb.ccsub.site/sub?" },
         ],
         remoteConfig: [
