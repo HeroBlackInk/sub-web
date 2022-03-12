@@ -131,9 +131,9 @@
                     <el-popover placement="bottom" v-model="form.extraset">
                       <el-row :gutter="10">
                         <el-col :span="12"><el-checkbox v-model="form.udp" @change="needUdp = true" label="启用 UDP"></el-checkbox></el-col>
-                        <el-col :span="12"><el-checkbox v-model="form.appendType" label="节点类型"</el-checkbox></el-col>
-                        <el-col :span="12"><el-checkbox v-model="form.sort" label="排序节点"</el-checkbox></el-col>
-                        <el-col :span="12"><el-checkbox v-model="form.fdn" label="过滤非法节点"</el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.appendType" label="节点类型"></el-checkbox></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.sort" label="排序节点"></el-checkbox></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.fdn" label="过滤非法节点"></el-checkbox></el-checkbox></el-col>
                       </el-row>
                       <el-row :gutter="10">
                         <el-col :span="12"><el-checkbox v-model="form.tfo" label="启用 TFO"></el-checkbox></el-col>
