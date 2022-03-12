@@ -10,9 +10,9 @@ jobs:
       matrix:
         node-version: [16]
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2.4.0
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: Get dependencies and build
@@ -20,13 +20,13 @@ jobs:
           yarn install
           yarn build
       - name: Upload
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3
         with:
           name: dist
           path: dist/
       - name: Push update to subconverter
         if: ${{ github.ref == 'refs/heads/master' }}
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.REPO_TOKEN }}
           script: |
