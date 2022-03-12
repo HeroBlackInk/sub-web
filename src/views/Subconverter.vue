@@ -124,64 +124,21 @@
                 </el-form-item>
                 <el-form-item label-width="0px">
                   <el-row type="flex">
-                    <el-col>
-                      <el-checkbox
-                        v-model="form.emoji"
-                        label="Emoji"
-                        border
-                      ></el-checkbox>
-                    </el-col>
-                    <el-col>
-                      <el-checkbox
-                        v-model="form.new_name"
-                        border
-                        label="Clash新字段"
-                        placement="bottom"
-                        style="margin-left: 10px"
-                      ></el-checkbox>
-                    </el-col>
+                      <el-row :gutter="10">
+                        <el-col :span="12"><el-checkbox v-model="form.emoji" label="Emoji"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.new_name" label="Clash新字段名"></el-checkbox></el-col>
+                      </el-row>
                     <el-popover placement="bottom" v-model="form.extraset">
-                      <el-row>
-                        <el-checkbox
-                          v-model="form.udp"
-                          label="启用 UDP"
-                        ></el-checkbox>
+                      <el-row :gutter="10">
+                        <el-col :span="12"><el-checkbox v-model="form.udp" @change="needUdp = true" label="启用 UDP"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.appendType" label="节点类型"</el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.sort" label="排序节点"</el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.fdn" label="过滤非法节点"</el-checkbox></el-col>
                       </el-row>
-                      <el-row>
-                        <el-checkbox
-                          v-model="form.appendType"
-                          label="节点类型"
-                        ></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox
-                          v-model="form.sort"
-                          label="排序节点"
-                        ></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox
-                          v-model="form.fdn"
-                          label="过滤非法节点"
-                        ></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox
-                          v-model="form.tfo"
-                          label="TCP Fast Open"
-                        ></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox
-                          v-model="form.scv"
-                          label="Skip Cert Verify"
-                        ></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox
-                          v-model="form.nodeList"
-                          label="输出为 Node List"
-                        ></el-checkbox>
+                      <el-row :gutter="10">
+                        <el-col :span="12"><el-checkbox v-model="form.tfo" label="启用 TFO"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.scv" label="跳过证书验证"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.nodeList" label="输出为 Node List"></el-checkbox></el-col>
                       </el-row>
                       <el-button slot="reference">节点处理</el-button>
                     </el-popover>
@@ -190,17 +147,9 @@
                       v-model="form.rule"
                       style="margin-left: 10px"
                     >
-                      <el-row>
-                        <el-checkbox
-                          v-model="form.expand"
-                          label="展开规则"
-                        ></el-checkbox>
-                      </el-row>
-                      <el-row>
-                        <el-checkbox
-                          v-model="form.classic"
-                          label="Classic Rule Provider"
-                        ></el-checkbox>
+                      <el-row :gutter="10">
+                        <el-col :span="12"><el-checkbox v-model="form.expand" label="展开规则"></el-checkbox></el-col>
+                        <el-col :span="12"><el-checkbox v-model="form.classic" label="Classic Rule Provider"></el-checkbox></el-col>
                       </el-row>
                       <el-button slot="reference">Rule Provider 选项</el-button>
                     </el-popover>
