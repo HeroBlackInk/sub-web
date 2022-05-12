@@ -294,17 +294,16 @@ export default {
         },
         customBackend: {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
-          "firefly-sub.vercel.app": "https://firefly-sub.vercel.app/sub?",
+          "firefly-subs.onrender.com": "https://firefly-subs.onrender.com/sub?",
           "firefly-sub.herokuapp.com": "https://firefly-sub.herokuapp.com/sub?",
           "firefly-web.onrender.com": "https://firefly-web.onrender.com/sub?",
-          "firefly-sub-ltg5.onrender.com": "https://firefly-sub-ltg5.onrender.com/sub?",
           "sub.ccsub.site(CordCloud机场提供)": "https://subweb.ccsub.site/sub?",
         },
         backendOptions: [
           { value: "http://localhost:25500/sub?" },
-          { value: "https://firefly-sub.vercel.app/sub?" },
+          { value: "https://firefly-subs.onrender.com/sub?" },
           { value: "https://firefly-sub.herokuapp.com/sub?" },
-          { value: "https://firefly-sub.up.railway.app/sub?" },
+          { value: "https://firefly-web.onrender.com/sub?" },
           { value: "https://subweb.ccsub.site/sub?" },
         ],
         remoteConfig: [
