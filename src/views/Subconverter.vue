@@ -296,8 +296,8 @@ export default {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
           "firefly-sub.vercel.app": "https://firefly-sub.vercel.app/sub?",
           "firefly-sub.herokuapp.com": "https://firefly-sub.herokuapp.com/sub?",
-          "firefly-sub-ltg5.onrender.com":
-            "https://firefly-sub-ltg5.onrender.com/sub?",
+          "firefly-web.onrender.com": "https://firefly-web.onrender.com/sub?",
+          "firefly-sub-ltg5.onrender.com": "https://firefly-sub-ltg5.onrender.com/sub?",
           "sub.ccsub.site(CordCloud机场提供)": "https://subweb.ccsub.site/sub?",
         },
         backendOptions: [
