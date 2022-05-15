@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.1.1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Get dependencies and build
@@ -26,7 +26,7 @@ jobs:
           path: dist/
       - name: Push update to subconverter
         if: ${{ github.ref == 'refs/heads/master' }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@v6.1.0
         with:
           github-token: ${{ secrets.REPO_TOKEN }}
           script: |
