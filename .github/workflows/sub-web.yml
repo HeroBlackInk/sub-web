@@ -1,0 +1,56 @@
+name: Update sub-web
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: sub-web
+  # 自动取消其他运行中的workflow
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update sub-web
+        run: |
+          rm -rf sub-web
+          git clone https://github.com/LM-Firefly/sub-web.git
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3.0.0
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Get dependencies and build
+        run: |
+          cd sub-web
+          yarn install
+          yarn build
+
+      - name: Clean up
+        run: |
+          cd $GITHUB_WORKSPACE
+          mkdir temp
+          sudo cp -rf sub-web/dist/* temp
+          mv temp root
+
+#      - name: Add & Commit
+#        uses: EndBug/add-and-commit@v9.0.0
+#        with:
+#          author_name: GitHub Action
+#          author_email: noreply@github.com
+#          message: 'Update sub-web from LM-Firefly/sub-web'
+#          add: '-A'
+#        env:
+#          secrets.GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
